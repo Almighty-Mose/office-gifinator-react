@@ -9,18 +9,68 @@
 }
 
 .App-header {
+  margin: 0;
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+  height: 100px;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+/* GifList */
+
+.GifListContainer {
+  background-color: #282c34;
+  position: absolute;
+  top: 100px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  overflow-y: scroll; 
+}
+
+.GifList img {
+  padding: 8px;
+}
+
+/* Search Bar */
+
+.GifSearch input {
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  border-radius: 0;
+  font-weight: 400;
+  width: 100%;
+  border: 0;
+  margin: 0;
+  height: 52px;
+  letter-spacing: 1px;
+  font-size: 18px;
+  padding: 10px;
+}
+
+/* scrollbar - NOT SUPPORTED IN IE/EDGE OR FIREFOX */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #1b1b1b; 
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: gray; 
 }
 
 @keyframes App-logo-spin {
