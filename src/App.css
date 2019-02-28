@@ -35,7 +35,7 @@
   overflow-y: scroll; 
 }
 
-.GifList img {
+.GifListContainer img {
   padding: 8px;
 }
 

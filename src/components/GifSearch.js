@@ -13,7 +13,7 @@ export default class GifSearch extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    this.props.fetchGifs(this.state.query)
+    this.props.fetchGifs(0, this.state.query)
   }
 
   render() {
