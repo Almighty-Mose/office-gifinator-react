@@ -37,7 +37,7 @@ export default class GifListContainer extends Component {
 
   loadMore = () => {
     this.setState({limit: this.state.limit + 5})
-    this.fetchGifs(this.state.limit)
+    this.fetchGifs(this.state.limit, this.state.query)
   }
 
   fetchGifs = (limit, query = "") => {
