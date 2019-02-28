@@ -8,7 +8,8 @@ const URL = `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=the offic
 export default class GifListContainer extends Component {
   state = {
     gifs: [],
-    limit: 25
+    limit: 25,
+    query: ''
   }
 
   componentDidMount() {
@@ -21,6 +22,17 @@ export default class GifListContainer extends Component {
         this.loadMore()
       }
     })
+  }
+
+  handleQueryChange = (e) => {
+    this.setState({
+      query: e.target.value
+    })
+  }
+
+  handleQuerySubmit = (e) => {
+    e.preventDefault()
+    this.fetchGifs(this.state.limit, this.state.query)
   }
 
   loadMore = () => {
@@ -42,7 +54,10 @@ export default class GifListContainer extends Component {
   render() {
     return (
       <div className="GifListContainer" ref="iScroll">
-        <GifSearch fetchGifs={this.fetchGifs} />
+        <GifSearch 
+          query={this.state.query}
+          handleQueryChange={this.handleQueryChange.bind(this)}
+          handleQuerySubmit={this.handleQuerySubmit.bind(this)} />
         <GifList gifs={this.state.gifs} />
       </div>
     )
