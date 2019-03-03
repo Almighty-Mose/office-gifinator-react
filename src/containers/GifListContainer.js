@@ -6,11 +6,19 @@ const API_KEY = process.env.REACT_APP_GIPHY_API_KEY
 const URL = `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=the office`
 
 export default class GifListContainer extends Component {
-  state = {
-    gifs: [],
-    limit: 25,
-    query: ''
+  constructor() {
+    super()
+    
+    this.state = {
+      gifs: [],
+      limit: 25,
+      query: ''
+    }
+
+    this.handleQueryChange = this.handleQueryChange.bind(this)
+    this.handleQuerySubmit = this.handleQuerySubmit.bind(this)
   }
+  
 
   componentDidMount() {
     console.log('GLC did mount')
@@ -36,7 +44,7 @@ export default class GifListContainer extends Component {
   }
 
   loadMore = () => {
-    this.setState({limit: this.state.limit + 5})
+    this.setState({limit: this.state.limit + 15})
     this.fetchGifs(this.state.limit, this.state.query)
   }
 
@@ -56,8 +64,8 @@ export default class GifListContainer extends Component {
       <div className="GifListContainer" ref="iScroll">
         <GifSearch 
           query={this.state.query}
-          handleQueryChange={this.handleQueryChange.bind(this)}
-          handleQuerySubmit={this.handleQuerySubmit.bind(this)} />
+          handleQueryChange={this.handleQueryChange}
+          handleQuerySubmit={this.handleQuerySubmit} />
         <GifList gifs={this.state.gifs} />
       </div>
     )
