@@ -33,9 +33,11 @@ export default class GifListContainer extends Component {
   }
 
   handleQueryChange = (e) => {
+    let input = e.target.value.replace('&', '')
     this.setState({
-      query: e.target.value
+      query: input
     })
+    console.log(input)
   }
 
   handleQuerySubmit = (e) => {
