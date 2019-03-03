@@ -47,6 +47,7 @@ export default class GifListContainer extends Component {
 
   loadMore = () => {
     this.setState({limit: this.state.limit + 15})
+    console.log(this.state.limit)
     this.fetchGifs(this.state.limit, this.state.query)
   }
 
@@ -55,8 +56,9 @@ export default class GifListContainer extends Component {
       .then(resp => resp.json())
       .then(gifs => {
         this.setState({ 
-          gifs: gifs.data.map(gif => ({ url: gif.images.original.url, id: gif.id })),
-          offset: gifs.data.length
+          gifs: gifs.data.map(gif => (
+            { url: gif.images.original.url, id: gif.id }
+          ))
         });
       });
   }
