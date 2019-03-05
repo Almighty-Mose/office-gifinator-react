@@ -1,11 +1,23 @@
-import React, { Component } from 'react'
+import React from 'react'
+import styled from 'styled-components'
 
-export default class Header extends Component {
-  render() {
-    return (
-      <>
-        <h1 className="App-header">The Office Gifinator</h1>
-      </>
-    )
-  }
+const StyledHeader = styled.header`
+    margin: 0;
+    background-color: #282c34;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    height: 100px;
+    font-size: 2em;
+  `
+
+const Header = () => {
+  return (
+    <>
+      <StyledHeader>The Office Gifinator</StyledHeader>
+    </>
+  )
 }
+export default Header
