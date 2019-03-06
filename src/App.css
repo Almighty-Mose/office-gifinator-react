@@ -1,17 +1,3 @@
-
-
-/* GifList */
-
-.GifListContainer {
-  background-color: #282c34;
-  position: absolute;
-  top: 100px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  overflow-y: scroll; 
-}
-
 /* Search Bar */
 
 .GifSearch input {

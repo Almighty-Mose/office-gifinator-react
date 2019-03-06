@@ -1,9 +1,20 @@
 import React, { Component } from 'react'
+import styled from 'styled-components'
 import GifList from '../components/GifList'
 import GifSearch from '../components/GifSearch'
 
 const API_KEY = process.env.REACT_APP_GIPHY_API_KEY
 const URL = `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=the office`
+
+const StyledGifContainer = styled.div`
+  background-color: #282c34;
+  position: absolute;
+  top: 100px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  overflow-y: scroll;
+`
 
 export default class GifListContainer extends Component {
   constructor() {
@@ -65,14 +76,13 @@ export default class GifListContainer extends Component {
 
   render() {
     return (
-      <div className="GifListContainer" ref="iScroll">
+      <StyledGifContainer ref="iScroll">
         <GifSearch 
           query={this.state.query}
           handleQueryChange={this.handleQueryChange}
           handleQuerySubmit={this.handleQuerySubmit} />
         <GifList gifs={this.state.gifs} />
-        
-      </div>
+      </StyledGifContainer>
     )
   }
 }
