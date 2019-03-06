@@ -1,18 +1,21 @@
-import React, { Component } from 'react';
-import GifListContainer from './containers/GifListContainer'
+import React from 'react';
+import styled from 'styled-components'
 import Header from './components/Header'
+import GifListContainer from './containers/GifListContainer'
 
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <Header />
-        <GifListContainer />
-      </div>
-    );
-  }
+const StyledApp = styled.div`
+  text-align: center;
+`
+
+const App = () => {
+  return (
+    <StyledApp>
+      <Header />
+      <GifListContainer />
+    </StyledApp>
+  );
 }
 
 export default App;

@@ -71,6 +71,7 @@ export default class GifListContainer extends Component {
           handleQueryChange={this.handleQueryChange}
           handleQuerySubmit={this.handleQuerySubmit} />
         <GifList gifs={this.state.gifs} />
+        
       </div>
     )
   }
