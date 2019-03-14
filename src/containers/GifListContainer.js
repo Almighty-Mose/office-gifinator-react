@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import GifList from '../components/GifList'
 import GifSearch from '../components/GifSearch'
 
+// should have an api key
 const API_KEY = process.env.REACT_APP_GIPHY_API_KEY
 const URL = `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=the office`
 
@@ -68,7 +69,9 @@ export default class GifListContainer extends Component {
       .then(gifs => {
         this.setState({ 
           gifs: gifs.data.map(gif => (
-            { url: gif.images.original.url, id: gif.id }
+            { url: gif.images.original.url, id: gif.id,
+              preview: gif.images.original_still.url
+            }
           ))
         });
       });
