@@ -23,6 +23,8 @@ class GifList extends Component {
   }
 
   render() {
+    const { gifs } = this.props
+
     return(
       <>
         {gifs.map(gif =>
