@@ -15,7 +15,6 @@ class GifList extends Component {
   handleMouseEnter = (element) => {
     let fullGif = this.findGif(element)
     element.currentTarget.src = fullGif.url
-    console.log(fullGif)
   }
 
   handleMouseLeave = element => {
@@ -26,7 +25,7 @@ class GifList extends Component {
   render() {
     return(
       <>
-        {this.props.gifs.map(gif =>
+        {gifs.map(gif =>
             <StyledGif 
               key={gif.id} 
               id={gif.id}

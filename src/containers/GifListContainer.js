@@ -37,8 +37,6 @@ export default class GifListContainer extends Component {
     this.fetchGifs(this.state.limit);
     this.refs.iScroll.addEventListener("scroll", () => {
       if (this.refs.iScroll.scrollTop + this.refs.iScroll.clientHeight >= this.refs.iScroll.scrollHeight) {
-        console.log("ScrollTop:", this.refs.iScroll.scrollTop)
-        console.log("ClientHeight:", this.refs.iScroll.clientHeight)
         this.loadMore()
       }
     })
@@ -49,7 +47,6 @@ export default class GifListContainer extends Component {
     this.setState({
       query: input
     })
-    console.log(input)
   }
 
   handleQuerySubmit = (e) => {
@@ -59,7 +56,6 @@ export default class GifListContainer extends Component {
 
   loadMore = () => {
     this.setState({limit: this.state.limit + 15})
-    console.log(this.state.limit)
     this.fetchGifs(this.state.limit, this.state.query)
   }
 
