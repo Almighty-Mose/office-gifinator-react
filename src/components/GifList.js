@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const StyledGif = styled.img`
   width: 23%;
   height: 23%;
-  padding: 1%;
+  padding: 0.5%;
 `
 class GifList extends Component {
 
@@ -18,6 +18,11 @@ class GifList extends Component {
     console.log(fullGif)
   }
 
+  handleMouseLeave = element => {
+    let fullGif = this.findGif(element)
+    element.currentTarget.src = fullGif.preview
+  }
+
   render() {
     return(
       <>
@@ -27,7 +32,8 @@ class GifList extends Component {
               id={gif.id}
               src={gif.preview} 
               alt="" 
-              onMouseEnter={this.handleMouseEnter} 
+              onMouseEnter={this.handleMouseEnter}
+              onMouseLeave={this.handleMouseLeave}
             />
           )
         }
