@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const StyledGif = styled.img`
   width: 23%;
-  height: 23%;
+  height: 200px;
   padding: 0.5%;
 `
 class GifList extends Component {
@@ -12,14 +12,14 @@ class GifList extends Component {
     return this.props.gifs.find(gif => gif.id === e.currentTarget.id)
   }
 
-  handleMouseEnter = (element) => {
-    let fullGif = this.findGif(element)
-    element.currentTarget.src = fullGif.url
+  handleMouseEnter = event => {
+    let fullGif = this.findGif(event)
+    event.currentTarget.src = fullGif.url
   }
 
-  handleMouseLeave = element => {
-    let fullGif = this.findGif(element)
-    element.currentTarget.src = fullGif.preview
+  handleMouseLeave = event => {
+    let fullGif = this.findGif(event)
+    event.currentTarget.src = fullGif.preview
   }
 
   render() {
