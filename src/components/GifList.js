@@ -6,6 +6,7 @@ const StyledGif = styled.img`
   height: 200px;
   padding: 0.5%;
 `
+
 class GifList extends Component {
 
   findGif = e => {
