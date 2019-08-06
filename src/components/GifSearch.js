@@ -1,11 +1,26 @@
 import React, { Component } from 'react'
+import styled from 'styled-components';
+
+const StyledInput = styled.input`
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  border-radius: 0;
+  font-weight: 400;
+  width: 100%;
+  border: 0;
+  margin: 0;
+  height: 52px;
+  letter-spacing: 1px;
+  font-size: 18px;
+  padding: 10px;
+`
 
 export default class GifSearch extends Component {
   render() {
     return (
       <div className="GifSearch">
         <form onSubmit={this.props.handleQuerySubmit}>
-          <input 
+          <StyledInput 
             type="text" 
             value={this.props.query}
             onChange={this.props.handleQueryChange} 

@@ -2,4 +2,4 @@ Branden shared his side project called “The Office Gifinator” that he’s cu
 
 => He’s still figuring out how to search for gifs specific to the TV show and not general office-related gifs. 
 
-=> He also wants to be able to show previews in lieu of loading the gifs to make the site faster and fix up the view to look cleaner. He’s considering using this as a base for his React/Redux project.
+Redo the styling with flex now that you know it. Should make what you were trying to achieve much easier.
