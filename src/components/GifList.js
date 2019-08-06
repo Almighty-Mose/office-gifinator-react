@@ -2,9 +2,14 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 const StyledGif = styled.img`
-  width: 23%;
+  flex: 0 1 auto;
   height: 200px;
   padding: 0.5%;
+`
+
+const GifWrapper = styled.div`
+  display: flex;
+  flex-flow: row wrap;
 `
 
 class GifList extends Component {
@@ -27,7 +32,7 @@ class GifList extends Component {
     const { gifs } = this.props
 
     return(
-      <>
+      <GifWrapper>
         {gifs.map(gif =>
             <StyledGif 
               key={gif.id} 
@@ -39,7 +44,7 @@ class GifList extends Component {
             />
           )
         }
-      </>
+      </GifWrapper>
     )
   }
 }
