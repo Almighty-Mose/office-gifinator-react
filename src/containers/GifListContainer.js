@@ -8,9 +8,9 @@ const API_KEY = process.env.REACT_APP_GIPHY_API_KEY
 const URL = `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=the office`
 
 const StyledGifContainer = styled.div`
-  background-color: #282c34;
+  background-color: #7C898B;
   position: absolute;
-  top: 100px;
+  top: 70px;
   left: 0px;
   right: 0px;
   bottom: 0px;

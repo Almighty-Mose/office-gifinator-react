@@ -4,15 +4,16 @@ import styled from 'styled-components';
 const StyledInput = styled.input`
   box-sizing: border-box;
   -webkit-appearance: none;
+  background: linear-gradient(to right, #F7EBEC, #D1603D);
+  border: none;
   border-radius: 0;
   font-weight: 400;
   width: 100%;
-  border: 0;
   margin: 0;
   height: 52px;
   letter-spacing: 1px;
   font-size: 18px;
-  padding: 10px;
+  padding: 10px 50px;
 `
 
 export default class GifSearch extends Component {
