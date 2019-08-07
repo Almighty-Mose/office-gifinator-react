@@ -4,10 +4,11 @@ import styled from 'styled-components';
 const StyledInput = styled.input`
   box-sizing: border-box;
   -webkit-appearance: none;
+  border: none;
   border-radius: 0;
+  border-bottom: 2px solid black;
   font-weight: 400;
   width: 100%;
-  border: 0;
   margin: 0;
   height: 52px;
   letter-spacing: 1px;
