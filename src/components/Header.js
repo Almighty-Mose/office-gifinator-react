@@ -3,10 +3,10 @@ import styled from 'styled-components'
 
 const StyledHeader = styled.header`
     margin: 0 auto;
-    padding: 20px;
+    padding: 10px;
     background-color: #282c34;
     color: white;
-    height: 100px;
+    height: 70px;
     font-size: 2em;
   `
 
