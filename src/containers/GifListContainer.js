@@ -58,7 +58,9 @@ export default class GifListContainer extends Component {
     this.setState({limit: this.state.limit + 15})
     this.fetchGifs(this.state.limit, this.state.query)
   }
-
+  
+  //TODO: fetchGifs should pull its arguments from state, not be passed them as args.
+  //TODO: This also changes lines 54 and 59 to simply this.fetchGifs()
   fetchGifs = (limit, query = "") => {
     fetch(URL + " " + query + `&limit=${limit}`)
       .then(resp => resp.json())
